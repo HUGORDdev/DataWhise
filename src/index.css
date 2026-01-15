@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* @variant dark (&:where(.dark, .dark *)); */
+@variant dark (&:where(.dark, .dark *));
 
 @theme {
     /* 1. Définition des Polices */
@@ -8,7 +8,7 @@
     --font-body: "Inter", sans-serif;
 
     /* 2. Définition des Tailles avec leurs Interlignes intégrés */
-    /* Format: --text-{nom}: {taille}; --text-{nom}--line-height: {interligne}; */
+    /*   */
 
     --text-display1: 60px;
     --text-display1--line-height: 1.1;
@@ -26,21 +26,22 @@
     --text-base-txt: 16px;
     --text-base-txt--line-height: 1.6;
 
-    --text-large-txt: 24px;
+    --text-large-txt: 20px;
     --text-large-txt--line-height: 1.6;
 
     --text-small-txt: 14px;
     --text-small-txt--line-height: 1.4;
 
+    /* 3. Définition des Couleurs */
     --color-brand-green: #3A7326;
     --color-brand-dark: #3C403A,;
     --color-border-color: #C1C5BF;
     --color-text-color: #A2A89E;
+    
 }
 
 
 @layer utilities {
-    /* On crée des classes de "base" pour chaque niveau hiérarchique */
 
     .display-style {
         @apply font-display text-display1;
