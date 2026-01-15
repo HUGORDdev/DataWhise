@@ -1,68 +1,88 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import "tailwindcss";
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+/* @variant dark (&:where(.dark, .dark *)); */
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@theme {
+    /* 1. Définition des Polices */
+    --font-display: "Dm Sans", sans-serif;
+    --font-body: "Inter", sans-serif;
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
+    /* 2. Définition des Tailles avec leurs Interlignes intégrés */
+    /* Format: --text-{nom}: {taille}; --text-{nom}--line-height: {interligne}; */
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
+    --text-display1: 60px;
+    --text-display1--line-height: 1.1;
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+    --text-h2: 2.5rem;
+    --text-h2--line-height: 1.2;
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+    --text-h4: 25px;
+    --text-h4--line-height: 1.2;
+
+
+    --text-medium-txt: 20px;
+    --text-medium-txt--line-height: 1.58;
+
+    --text-base-txt: 16px;
+    --text-base-txt--line-height: 1.6;
+
+    --text-large-txt: 24px;
+    --text-large-txt--line-height: 1.6;
+
+    --text-small-txt: 14px;
+    --text-small-txt--line-height: 1.4;
+
+    --color-brand-green: #3A7326;
+    --color-brand-dark: #3C403A,;
+    --color-border-color: #C1C5BF;
+    --color-text-color: #A2A89E;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+
+@layer utilities {
+    /* On crée des classes de "base" pour chaque niveau hiérarchique */
+
+    .display-style {
+        @apply font-display text-display1;
+    }
+
+    .H1-Bold {
+        @apply font-bold text-5xl font-display;
+        line-height: 1.16;
+    }
+
+    .h2-style {
+        @apply font-display text-h2;
+    }
+
+    .H3-Bold {
+        @apply font-bold font-display;
+        font-size: 2rem;
+        line-height: 1.28;
+    }
+
+    .h4-style {
+        @apply font-display text-h4;
+    }
+
+    .h5-style {
+        @apply font-display text-medium-txt
+    }
+
+    /* Les styles pour le corps du texte (Inter) */
+    .body-medium {
+        @apply font-body text-medium-txt;
+    }
+
+    .body-base {
+        @apply font-body text-base-txt;
+    }
+
+    .body-large {
+        @apply font-body text-large-txt
+    }
+
+    .body-small {
+        @apply font-body text-small-txt
+    }
 }
